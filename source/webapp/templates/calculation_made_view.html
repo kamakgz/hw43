@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h1>Simple calculator</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label>First number: </label>
+    <input type="number" name="first"/><br/>
+    <br/>
+    <label>Second number: </label>
+    <input type="number" name="second"/><br/>
+    <input type="radio" id="calculationChoice1" name="calculation" value="add">
+    <label for="calculationChoice1">add</label><br>
+    <input type="radio" id="calculationChoice2" name="calculation" value="subtract">
+    <label for="calculationChoice2">subtract</label><br>
+    <input type="radio" id="calculationChoice3" name="calculation" value="multiply">
+    <label for="calculationChoice3">multiply</label><br>
+    <input type="radio" id="calculationChoice4" name="calculation" value="divide">
+    <label for="calculationChoice4">divide</label><br>
+    <input type="submit" value="Calculate"/>
+</form>
+</div>
+<div>
+    <h3>Result is: {{ context.answer }}</h3>
+</div>
+</body>
+</html>
